@@ -11,7 +11,7 @@ class Ytclip < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install "ytclip-app==#{version}"
+    venv.pip_install buildpath
     bin.install_symlink libexec/"bin/ytclip"
   end
 
