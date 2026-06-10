@@ -8,7 +8,8 @@ class Ytclip < Formula
   depends_on "python@3.12"
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    python = Formula["python@3.12"].opt_bin/"python3.12"
+    system python, "-m", "venv", libexec
     system libexec/"bin/pip", "install", "--no-cache-dir", buildpath.to_s
     bin.install_symlink libexec/"bin/ytclip"
   end
