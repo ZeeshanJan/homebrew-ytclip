@@ -1,6 +1,4 @@
 class Ytclip < Formula
-  include Language::Python::Virtualenv
-
   desc "Self-hosted YouTube clip creator"
   homepage "https://ytclip.xyz"
   url "https://files.pythonhosted.org/packages/86/3d/de4f2eb88763edaafae4ef67bfc2b7b08eac84c3e4629704fa9b078476d9/ytclip_app-1.0.3.tar.gz"
@@ -11,7 +9,7 @@ class Ytclip < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install buildpath
+    system libexec/"bin/pip", "install", "--no-cache-dir", buildpath.to_s
     bin.install_symlink libexec/"bin/ytclip"
   end
 
