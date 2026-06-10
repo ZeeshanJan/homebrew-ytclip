@@ -1,4 +1,6 @@
 class Ytclip < Formula
+  include Language::Python::Virtualenv
+
   desc "Self-hosted YouTube clip creator"
   homepage "https://ytclip.xyz"
   url "https://files.pythonhosted.org/packages/86/3d/de4f2eb88763edaafae4ef67bfc2b7b08eac84c3e4629704fa9b078476d9/ytclip_app-1.0.3.tar.gz"
